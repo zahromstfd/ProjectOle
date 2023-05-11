@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/produk"
+        android:icon="@drawable/produk"
+        android:title="produk" />
+    <item
+        android:id="@+id/notifikasi"
+        android:icon="@drawable/notifikasi"
+        android:title="Item" />
+    <item
+        android:id="@+id/beranda"
+        android:icon="@drawable/beranda"
+        android:title="beranda" />
+    <item
+        android:id="@+id/keranjang"
+        android:icon="@drawable/keranjang"
+        android:title="keranjang" />
+    <item
+        android:id="@+id/profil"
+        android:icon="@drawable/profil1"
+        android:title="profil" />
+</menu>

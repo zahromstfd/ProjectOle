@@ -58,9 +58,9 @@
     <Button
         android:id="@+id/buttonmasuk"
         android:layout_marginTop="36dp"
-        android:background="@drawable/buttonbg"
+        android:background="@drawable/buttoninput"
         android:text="Masuk"
-        style="@style/BtnLogin"
+        style="@style/BtnMasuk"
         android:textColor="#FFFFFF"
         android:textSize="10sp" />
 

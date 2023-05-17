@@ -1,5 +1,6 @@
 package com.example.projectole
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
@@ -7,49 +8,57 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class DetailProductActivity : AppCompatActivity() {
+class DetailProdukActivity : AppCompatActivity() {
+    private lateinit var minusButton: ImageButton
+    private lateinit var plusButton: ImageButton
+    private lateinit var quantityTextView: TextView
+    private lateinit var addToCartButton: Button
 
-    private lateinit var basketIcon: ImageButton
-    private lateinit var profileIcon: ImageButton
+    private var quantity: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_produk)
 
-        basketIcon = findViewById(R.id.basketIcon)
-        profileIcon = findViewById(R.id.profileIcon)
+        minusButton = findViewById(R.id.minusButton)
+        plusButton = findViewById(R.id.plusButton)
+        quantityTextView = findViewById(R.id.quantityTextView)
+        addToCartButton = findViewById(R.id.addToCartButton)
 
-        // Add click listeners to the icons
-        basketIcon.setOnClickListener {
-            Toast.makeText(this, "Basket icon clicked", Toast.LENGTH_SHORT).show()
+        val backicon = findViewById<ImageButton>(R.id.backicon)
+
+        backicon.setOnClickListener{
+            val intent = Intent(this, ListProdukActivity::class.java)
+            startActivity(intent)
         }
-
-        profileIcon.setOnClickListener {
-            Toast.makeText(this, "Profile icon clicked", Toast.LENGTH_SHORT).show()
-        }
-
-        val minusButton: ImageButton = findViewById(R.id.minusButton)
-        val plusButton: ImageButton = findViewById(R.id.plusButton)
-        val quantityTextView: TextView = findViewById(R.id.quantityTextView)
-        val addToCartButton: Button = findViewById(R.id.addToCartButton)
-
         minusButton.setOnClickListener {
-            val quantity = quantityTextView.text.toString().toInt()
-            if (quantity > 0) {
-                quantityTextView.text = (quantity - 1).toString()
-            }
+            decrementQuantity()
         }
 
         plusButton.setOnClickListener {
-            val quantity = quantityTextView.text.toString().toInt()
-            quantityTextView.text = (quantity + 1).toString()
+            incrementQuantity()
         }
 
         addToCartButton.setOnClickListener {
-            val quantity = quantityTextView.text.toString().toInt()
-            val productName = findViewById<TextView>(R.id.productNameTextView).text.toString()
-            val message = "Added $quantity $productName to cart"
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+            addToCart()
         }
+    }
+
+    private fun decrementQuantity() {
+        if (quantity > 0) {
+            quantity--
+            quantityTextView.text = quantity.toString()
+        }
+    }
+
+    private fun incrementQuantity() {
+        quantity++
+        quantityTextView.text = quantity.toString()
+    }
+
+    private fun addToCart() {
+        val productName = findViewById<TextView>(R.id.productNameTextView).text.toString()
+        val message = "Added $quantity $productName to cart"
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

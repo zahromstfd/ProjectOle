@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
@@ -41,39 +41,44 @@
             android:layout_toStartOf="@id/basketIcon"
             android:layout_centerVertical="true"
             android:src="@drawable/profilku" />
+    </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/image_view2"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/cari"
-        android:paddingStart="16dp"
-        android:layout_alignParentStart="true" />
+        android:orientation="horizontal"
+        android:padding="16dp">
 
         <EditText
-            android:id="@+id/search_edit_text"
-            android:layout_width="270dp"
+            android:id="@+id/etKeyword"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_toRightOf="@id/backicon"
-            android:background="@drawable/bgnewstyle"
-            android:hint="Cari Produk"
-            android:paddingStart="16dp" />
+            android:hint="Ketik Produk"
+            android:drawableRight="@drawable/cari"
+            android:inputType="text"
+            android:layout_marginBottom="16dp" />
 
-    </RelativeLayout>
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cari"
+            style="@style/BtnLogin"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/productLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="16dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textViewProductTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
             android:text="Nopia"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -88,6 +93,7 @@
             android:id="@+id/textViewCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
             android:text="Kategori"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -97,12 +103,11 @@
             android:id="@+id/textViewProductDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
             android:text="Ole-ole Pwt menjual beberapa jenis makanan dan minuman seperti"
             android:layout_marginTop="16dp"/>
 
     </LinearLayout>
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -116,7 +121,7 @@
             android:src="@drawable/getuk" />
 
         <Button
-            android:id="@+id/buttonCategory"
+            android:id="@+id/btnMakanan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Makanan"
@@ -137,7 +142,7 @@
         android:src="@drawable/dawet" />
 
     <Button
-        android:id="@+id/buttonCategory1"
+        android:id="@+id/btnMinuman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Minuman"

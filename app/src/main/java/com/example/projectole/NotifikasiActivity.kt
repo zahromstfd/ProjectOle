@@ -52,6 +52,6 @@ class NotifikasiActivity : AppCompatActivity() {
         pendingPaymentTime.text = "11:00 AM"
 
         paymentSuccessfulText.text = "Payment Successful"
-        paymentSuccessfulTime.text = "11:00 AM"
-            }
+        paymentSuccessfulTime.text = "11:00AM"
+    }
 }

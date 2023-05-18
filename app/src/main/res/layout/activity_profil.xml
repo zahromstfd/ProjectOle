@@ -12,7 +12,8 @@
         android:text="Profil Saya"
         android:layout_gravity="center"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:paddingBottom="30dp"/>
 
     <ImageView
         android:id="@+id/imageViewProfile"
@@ -66,18 +67,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
-        <CheckBox
-            android:id="@+id/checkBoxMale"
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/radio1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Laki-laki" />
-
-        <CheckBox
-            android:id="@+id/checkBoxFemale"
+        <RadioButton
+            android:id="@+id/radio2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Perempuan" />
+        </RadioGroup>
 
     </LinearLayout>
 

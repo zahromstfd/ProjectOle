@@ -2,15 +2,15 @@ package com.example.projectole
 
 import android.os.Bundle
 import android.widget.Button
-import android.widget.CheckBox
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.EditText
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class ProfilActivity : AppCompatActivity() {
-    private lateinit var checkBoxMale: CheckBox
-    private lateinit var checkBoxFemale: CheckBox
+    private lateinit var radio1: RadioButton
+    private lateinit var radio2: RadioButton
     private lateinit var editTextFullName: EditText
     private lateinit var editTextDateOfBirth: EditText
     private lateinit var editTextPassword: EditText
@@ -24,8 +24,9 @@ class ProfilActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profil)
 
         // Initialize views
-        checkBoxMale = findViewById(R.id.checkBoxMale)
-        checkBoxFemale = findViewById(R.id.checkBoxFemale)
+        var radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
+        radio1 = findViewById(R.id.radio1)
+        radio2 = findViewById(R.id.radio2)
         editTextFullName = findViewById(R.id.editTextFullName)
         editTextDateOfBirth = findViewById(R.id.editTextDateOfBirth)
         editTextPassword = findViewById(R.id.editTextPassword)
@@ -47,16 +48,13 @@ class ProfilActivity : AppCompatActivity() {
         val phoneNumber = editTextPhoneNumber.text.toString()
         val email = editTextEmail.text.toString()
         val address = editTextAddress.text.toString()
-        val gender = when {
-            checkBoxMale.isChecked -> "Laki-laki"
-            checkBoxFemale.isChecked -> "Perempuan"
-            else -> ""
+        var radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
+        radioGroup.setOnCheckedChangeListener { group, checkedId ->
+            val selectedRadioButton = group.findViewById<RadioButton>(checkedId)
+            val gender = selectedRadioButton.text.toString()
         }
-
-        // TODO: Save the profile information to the database or perform any other necessary actions
-
         // Display a success message or perform any other desired actions
-        showToast("Profile saved successfully!")
+        showToast("Profile sukses tersimpan!")
     }
 
     private fun showToast(message: String) {

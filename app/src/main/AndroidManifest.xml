@@ -12,6 +12,15 @@
         android:theme="@style/Theme.ProjectOle"
         tools:targetApi="31">
         <activity
+            android:name=".DetailMinumanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KeranjangMinumanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KeranjangActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListMinuman"
             android:exported="false" />
         <activity

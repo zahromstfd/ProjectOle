@@ -27,10 +27,22 @@ class MainActivity : AppCompatActivity() {
         val basketicon = findViewById<ImageButton>(R.id.basketIcon)
         val profileicon = findViewById<ImageButton>(R.id.profileIcon)
 
+
         backicon.setOnClickListener{
             val intent = Intent(this, MasukActivity::class.java)
             startActivity(intent)
         }
+
+        basketicon.setOnClickListener{
+            val intent = Intent(this, KeranjangActivity::class.java)
+            startActivity(intent)
+        }
+
+        profileicon.setOnClickListener{
+            val intent = Intent(this, ProfilActivity::class.java)
+            startActivity(intent)
+        }
+
 
         btnSearch.setOnClickListener {
             val keyword = etKeyword.text.toString()
@@ -39,20 +51,19 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ListProdukActivity::class.java)
             intent.putExtra("keyword", keyword)
             startActivity(intent)
-            }
-            btnMakanan.setOnClickListener {
+        }
+        btnMakanan.setOnClickListener {
 
-                // Memulai activity baru dengan mengirimkan data pencarian
-                val intent = Intent(this, ListProdukActivity::class.java)
-                startActivity(intent)
-            }
-            btnMinuman.setOnClickListener {
+            // Memulai activity baru dengan mengirimkan data pencarian
+            val intent = Intent(this, ListProdukActivity::class.java)
+            startActivity(intent)
+        }
+        btnMinuman.setOnClickListener {
 
-                    // Memulai activity baru dengan mengirimkan data pencarian
-                val intent = Intent(this, ListMinuman::class.java)
-                startActivity(intent)
-                }
-
+            // Memulai activity baru dengan mengirimkan data pencarian
+            val intent = Intent(this, ListMinuman::class.java)
+            startActivity(intent)
+        }
     }
 }
 

@@ -53,13 +53,13 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/tempe" />
+        android:src="@drawable/dawet" />
 
     <TextView
         android:id="@+id/productNameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tempe Kripik"
+        android:text="Es Dawet"
         android:textColor="@color/black"
         android:textSize="26dp"
         android:textStyle="bold" />
@@ -67,7 +67,7 @@
         android:id="@+id/productstoreTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="by moki-moki"
+        android:text="by bang joo"
         android:textSize="16dp" />
 
     <LinearLayout
@@ -102,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Harga: Rp. 10.000"
+            android:text="Harga: Rp. 6.000"
             android:textSize="16sp" />
 
     </LinearLayout>
@@ -116,7 +116,7 @@
         android:id="@+id/descriptionTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Keripik tempe adalah makanan yang terbuat dari Tempe yang diiris tipis kemudian digoreng dengan menggunakan tepung yang telah dibumbui."
+        android:text="Dawet ayu terbuat dari campuran tepung bers dan tapioka. Es Dawet Ayu asli khas Banjarnegara lezat serta segar dan sangat cocok diminum pada cuaca panas, es dawet dapat diminum panas ataupun dingin dengan menambahkan es batu."
         android:layout_marginTop="8dp"
         android:layout_marginBottom="40dp"/>
     <Button

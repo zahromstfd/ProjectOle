@@ -8,7 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class DetailProdukActivity : AppCompatActivity() {
+class DetailMinumanActivity : AppCompatActivity() {
     private lateinit var minusButton: ImageButton
     private lateinit var plusButton: ImageButton
     private lateinit var quantityTextView: TextView
@@ -18,7 +18,7 @@ class DetailProdukActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_produk)
+        setContentView(R.layout.activity_detail_minuman)
 
         minusButton = findViewById(R.id.minusButton)
         plusButton = findViewById(R.id.plusButton)
@@ -34,7 +34,7 @@ class DetailProdukActivity : AppCompatActivity() {
             startActivity(intent)
         }
         basketicon.setOnClickListener{
-            val intent = Intent(this, KeranjangActivity::class.java)
+            val intent = Intent(this, KeranjangMinumanActivity::class.java)
             startActivity(intent)
         }
 
@@ -51,7 +51,7 @@ class DetailProdukActivity : AppCompatActivity() {
         }
 
         addToCartButton.setOnClickListener {
-            val intent = Intent(this, KeranjangActivity::class.java)
+            val intent = Intent(this, KeranjangMinumanActivity::class.java)
             startActivity(intent)
         }
     }

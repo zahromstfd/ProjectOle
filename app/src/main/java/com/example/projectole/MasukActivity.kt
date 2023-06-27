@@ -1,6 +1,5 @@
 package com.example.projectole
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -42,10 +41,6 @@ class MasukActivity : AppCompatActivity() {
                     "Gagal Login", Toast.LENGTH_SHORT)
                 toast.show()
             }
-        }
-        btnLogin.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
         }
 
     }

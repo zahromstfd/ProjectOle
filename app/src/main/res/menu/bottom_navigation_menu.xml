@@ -5,21 +5,21 @@
     <item
         android:id="@+id/produk"
         android:icon="@drawable/produk"
-        android:title="produk" />
+        android:title="Produk" />
     <item
         android:id="@+id/notifikasi"
-        android:icon="@drawable/notifikasi"
-        android:title="Item" />
+        android:icon="@drawable/notif"
+        android:title="Notifikasi" />
     <item
         android:id="@+id/beranda"
-        android:icon="@drawable/beranda"
-        android:title="beranda" />
+        android:icon="@drawable/home"
+        android:title="Beranda" />
     <item
         android:id="@+id/keranjang"
         android:icon="@drawable/keranjang"
-        android:title="keranjang" />
+        android:title="Keranjang" />
     <item
         android:id="@+id/profil"
-        android:icon="@drawable/profil1"
-        android:title="profil" />
+        android:icon="@drawable/profile"
+        android:title="Profil" />
 </menu>

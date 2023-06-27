@@ -20,8 +20,8 @@ class LoginActivity : AppCompatActivity() {
         val userDBHelper = DBHelper(this)
         btnLogin.setOnClickListener {
 
-                val intent = Intent(this, DaftarActivity::class.java)
-                startActivity(intent)
+            val intent = Intent(this, DaftarActivity::class.java)
+            startActivity(intent)
         }
         btnRegister.setOnClickListener {
             val intent = Intent(this, MasukActivity::class.java)

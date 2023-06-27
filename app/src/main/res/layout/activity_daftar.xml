@@ -63,10 +63,10 @@
         tools:layout_editor_absoluteY="414dp" />
 
     <EditText
-        android:id="@+id/EditUsernameLogin"
+        android:id="@+id/EditEmailRegister"
         style="@style/EditTextLogin"
         android:background="@drawable/buttoninput"
-        android:hint="Username"
+        android:hint="Email"
         android:inputType="textEmailAddress"
         android:paddingStart="20dp"
         tools:layout_editor_absoluteX="80dp"
@@ -74,24 +74,24 @@
         android:layout_marginBottom="20dp"/>
 
     <EditText
-        android:id="@+id/EditUsernameLogin"
-        style="@style/EditTextLogin"
-        android:background="@drawable/buttoninput"
-        android:hint="Email atau Telepon"
-        android:inputType="textEmailAddress"
-        android:paddingStart="20dp"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="461dp"
-        android:layout_marginBottom="20dp"/>
-
-    <EditText
-        android:id="@+id/EditPasswordLogin"
+        android:id="@+id/EditPasswordRegister"
         style="@style/EditTextLogin"
         android:background="@drawable/buttoninput"
         android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingStart="20dp"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="461dp"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/EditFullnameRegister"
+        style="@style/EditTextLogin"
+        android:background="@drawable/buttoninput"
+        android:hint="Nama Lengkap"
         android:paddingStart="20dp"
         android:layout_marginBottom="20dp"
-        android:inputType="textPassword"
+        android:inputType="text"
         tools:layout_editor_absoluteX="80dp"
         tools:layout_editor_absoluteY="523dp" />
 
@@ -100,6 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Daftar"
+        android:onClick="registerme"
         style="@style/BtnLogin"
         android:background="@drawable/buttonbg"
         android:layout_marginBottom="20dp"

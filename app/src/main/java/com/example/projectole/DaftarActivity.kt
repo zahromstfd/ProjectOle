@@ -1,52 +1,49 @@
 package com.example.projectole
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.projectole.DB.DBHelper
 
-
 class DaftarActivity : AppCompatActivity() {
+    lateinit var eemail: EditText
+    lateinit var epassword: EditText
+    lateinit var efullname: EditText
+    lateinit var btnregister: Button
+    lateinit var userDBHelper: DBHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daftar)
 
-        val savedLogin = getSharedPreferences("Login", MODE_PRIVATE)
-        val editSavedLogin = savedLogin.edit()
-        if (savedLogin.getString("Status", "Off")=="On"){
-            startActivity(Intent(this, ProfilActivity::class.java))
-        }
+        eemail = findViewById(R.id.EditEmailRegister)
+        epassword = findViewById(R.id.EditPasswordRegister)
+        efullname = findViewById(R.id.EditFullnameRegister)
+        btnregister = findViewById(R.id.btnmasuk)
+        userDBHelper = DBHelper(this)
+    }
 
-        val editUsername: EditText = findViewById(R.id.EditUsernameLogin)
-        val editPassword: EditText = findViewById(R.id.EditPasswordLogin)
-        val btnLogin: Button = findViewById(R.id.btnmasuk)
-        val userDBHelper = DBHelper(this)
-        btnLogin.setOnClickListener {
-            var emailku = editUsername.text.toString()
-            var passku = editPassword.text.toString()
-            var cekLogin = userDBHelper.cekLogin(emailku, passku)
-            if(cekLogin=="1"){
-                editSavedLogin.putString("Email", emailku)
-                editSavedLogin.putString("Password", passku)
-                editSavedLogin.putString("Status", "On")
-                editSavedLogin.commit()
+    fun registerme(view: View) {
+        var iemail = eemail.text.toString()
+        var ipassword = epassword.text.toString()
+        var ifullname = efullname.text.toString()
 
-                val intent = Intent(this, DaftarActivity::class.java)
-                startActivity(intent)
-            } else {
-                val toast: Toast = Toast.makeText(applicationContext,
-                    "Gagal Login", Toast.LENGTH_SHORT)
-                toast.show()
-            }
-        }
-        btnLogin.setOnClickListener {
-            val intent = Intent(this, ProfilActivity::class.java)
+        var cekuser = userDBHelper.cekUser(iemail)
+        var status = "Gagal"
+        if (cekuser == "0") {
+            userDBHelper.RegisterUser(iemail, ipassword, ifullname)
+            status = "Sukses"
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-        }
 
+        }
+        val toast: Toast = Toast.makeText(
+            applicationContext,
+            status, Toast.LENGTH_SHORT
+        )
+        toast.show()
     }
 }

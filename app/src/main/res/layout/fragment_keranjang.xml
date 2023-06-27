@@ -7,12 +7,13 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".KeranjangMinumanActivity">
+    tools:context=".fragments.KeranjangFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="20dp"
+        android:id="@+id/container_fragment">
 
         <TextView
             android:id="@+id/headerTextView"
@@ -47,17 +48,19 @@
             android:layout_toStartOf="@id/basketIcon"
             android:layout_centerVertical="true"
             android:src="@drawable/profilku" />
+
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/img1"
+            android:id="@+id/fotoKlanting"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/dawet"
+            android:src="@drawable/klanting"
             android:scaleType="centerCrop"
             android:layout_margin="8dp"/>
 
@@ -68,19 +71,19 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/ProductName1"
+                android:id="@+id/namaKlanting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Es Dawet"
+                android:text="Klanting"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_margin="8dp"/>
 
             <TextView
-                android:id="@+id/ProductPrice1"
+                android:id="@+id/hargaKlanting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rp 6.000"
+                android:text="Rp 15.000"
                 android:textSize="14sp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
@@ -89,88 +92,29 @@
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/minusButtona"
+            android:id="@+id/minus"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/minus" />
+            android:src="@drawable/minus"
+            tools:ignore="DuplicateIds"/>
 
         <TextView
-            android:id="@+id/quantityTextViewa"
+            android:id="@+id/quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:text="0"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="DuplicateIds"/>
 
         <ImageButton
-            android:id="@+id/plusButtona"
+            android:id="@+id/plus"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/tambah" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/img2"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/badeg"
-            android:scaleType="centerCrop"
-            android:layout_margin="8dp"/>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/ProductName2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Es Badeg"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_margin="8dp"/>
-
-            <TextView
-                android:id="@+id/ProductPrice2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Rp 3.000"
-                android:textSize="14sp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"/>
-
-        </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/minusButtonb"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/minus" />
-
-        <TextView
-            android:id="@+id/quantityTextViewb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="0"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/plusButtonb"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/tambah" />
+            android:src="@drawable/tambah"
+            tools:ignore="DuplicateIds"/>
 
     </LinearLayout>
     <LinearLayout
@@ -179,10 +123,10 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/img3"
+            android:id="@+id/fototempe"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/campur"
+            android:src="@drawable/tempe"
             android:scaleType="centerCrop"
             android:layout_margin="8dp"/>
 
@@ -193,19 +137,19 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/ProductName3"
+                android:id="@+id/namatempe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Es Campur"
+                android:text="Tempe Kripik"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_margin="8dp"/>
 
             <TextView
-                android:id="@+id/ProductPrice3"
+                android:id="@+id/hargatempe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rp 8.000"
+                android:text="Rp 10.000"
                 android:textSize="14sp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
@@ -214,26 +158,93 @@
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/minusButtonc"
+            android:id="@+id/minus1"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/minus" />
 
         <TextView
-            android:id="@+id/quantityTextViewc"
+            android:id="@+id/quantity1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:text="0"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+          />
 
         <ImageButton
-            android:id="@+id/plusButtonc"
+            android:id="@+id/plus1"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/tambah" />
+            android:src="@drawable/tambah"
+            tools:ignore="DuplicateIds"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/gambarnopia"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/nopia"
+            android:scaleType="centerCrop"
+            android:layout_margin="8dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/namanopia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nopia"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_margin="8dp"/>
+
+            <TextView
+                android:id="@+id/harganopia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rp 18.000"
+                android:textSize="14sp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"/>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/minus2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/minus"
+           />
+
+        <TextView
+            android:id="@+id/quantity2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="0"
+            android:textSize="20sp"
+            />
+
+        <ImageButton
+            android:id="@+id/plus2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/tambah"
+            />
 
     </LinearLayout>
     <LinearLayout
@@ -242,10 +253,10 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/img4"
+            android:id="@+id/fotobagelan"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/cau"
+            android:src="@drawable/bagelan"
             android:scaleType="centerCrop"
             android:layout_margin="8dp"/>
 
@@ -256,19 +267,19 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/ProductName4"
+                android:id="@+id/namabagelan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Es Cau"
+                android:text="Bagelan"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_margin="8dp"/>
 
             <TextView
-                android:id="@+id/ProductPrice4"
+                android:id="@+id/hargabagelan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rp 4.000"
+                android:text="Rp 12.000"
                 android:textSize="14sp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
@@ -277,26 +288,29 @@
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/minusButtond"
+            android:id="@+id/minus3"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/minus" />
+            android:src="@drawable/minus"
+            />
 
         <TextView
-            android:id="@+id/quantityTextViewd"
+            android:id="@+id/quantity3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:text="0"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            />
 
         <ImageButton
-            android:id="@+id/plusButtond"
+            android:id="@+id/plus3"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/tambah" />
+            android:src="@drawable/tambah"
+           />
 
     </LinearLayout>
     <LinearLayout
@@ -305,10 +319,10 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/img5"
+            android:id="@+id/fotogetuk"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/degan"
+            android:src="@drawable/getuk"
             android:scaleType="centerCrop"
             android:layout_margin="8dp"/>
 
@@ -319,19 +333,19 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/ProductName5"
+                android:id="@+id/namagetuk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Es Degan"
+                android:text="Getuk Goreng"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_margin="8dp"/>
 
             <TextView
-                android:id="@+id/ProductPrice5"
+                android:id="@+id/hargagetuk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rp 8.000"
+                android:text="Rp 18.000"
                 android:textSize="14sp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
@@ -340,26 +354,29 @@
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/minusButtone"
+            android:id="@+id/minus4"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/minus" />
+            android:src="@drawable/minus"
+            />
 
         <TextView
-            android:id="@+id/quantityTextViewe"
+            android:id="@+id/quantity4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:text="0"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            />
 
         <ImageButton
-            android:id="@+id/plusButtone"
+            android:id="@+id/plus4"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/tambah" />
+            android:src="@drawable/tambah"
+            />
 
     </LinearLayout>
     <LinearLayout
@@ -368,10 +385,10 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/img6"
+            android:id="@+id/fotomakaroni"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/brasil"
+            android:src="@drawable/makaroni"
             android:scaleType="centerCrop"
             android:layout_margin="8dp"/>
 
@@ -382,19 +399,19 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/ProductName6"
+                android:id="@+id/namamakaroni"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Es Brasil"
+                android:text="Makaroni"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_margin="8dp"/>
 
             <TextView
-                android:id="@+id/ProductPrice6"
+                android:id="@+id/hargamakaroni"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rp 3.000"
+                android:text="Rp 12.000"
                 android:textSize="14sp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
@@ -403,26 +420,29 @@
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/minusButtonf"
+            android:id="@+id/minus5"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/minus" />
+            android:src="@drawable/minus"
+           />
 
         <TextView
-            android:id="@+id/quantityTextViewf"
+            android:id="@+id/quantity5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:text="0"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            />
 
         <ImageButton
-            android:id="@+id/plusButtonf"
+            android:id="@+id/plus5"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/tambah" />
+            android:src="@drawable/tambah"
+            />
 
     </LinearLayout>
 

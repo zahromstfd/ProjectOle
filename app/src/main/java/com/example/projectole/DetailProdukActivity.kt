@@ -7,6 +7,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.projectole.fragments.KeranjangFragment
 
 class DetailProdukActivity : AppCompatActivity() {
     private lateinit var minusButton: ImageButton
@@ -54,6 +55,7 @@ class DetailProdukActivity : AppCompatActivity() {
             val intent = Intent(this, KeranjangActivity::class.java)
             startActivity(intent)
         }
+        
     }
 
     private fun decrementQuantity() {

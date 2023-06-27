@@ -2,69 +2,39 @@ package com.example.projectole
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.content.Intent
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
+import androidx.fragment.app.Fragment
+import com.example.projectole.databinding.ActivityMainBinding
+import com.example.projectole.fragments.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var btnSearch: Button
-    private lateinit var btnMakanan: Button
-    private lateinit var btnMinuman: Button
-    private lateinit var etKeyword: EditText
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        replaceFragment(HomeFragment())
 
-        btnSearch = findViewById(R.id.btnSearch)
-        etKeyword = findViewById(R.id.etKeyword)
-        btnMakanan = findViewById(R.id.btnMakanan)
-        btnMinuman = findViewById(R.id.btnMinuman)
+        binding.bottomNavigation.setOnItemSelectedListener { menuItem ->
+            val fragment: Fragment = when (menuItem.itemId) {
+                R.id.beranda -> HomeFragment()
+                R.id.profil -> ProfilFragment()
+                R.id.produk -> ProdukFragment()
+                R.id.notifikasi -> NotifikasiFragment()
+                R.id.keranjang -> KeranjangFragment()
+                else -> HomeFragment()
+            }
 
-        val backicon = findViewById<ImageButton>(R.id.backicon)
-        val basketicon = findViewById<ImageButton>(R.id.basketIcon)
-        val profileicon = findViewById<ImageButton>(R.id.profileIcon)
-
-
-        backicon.setOnClickListener{
-            val intent = Intent(this, MasukActivity::class.java)
-            startActivity(intent)
-        }
-
-        basketicon.setOnClickListener{
-            val intent = Intent(this, KeranjangActivity::class.java)
-            startActivity(intent)
-        }
-
-        profileicon.setOnClickListener{
-            val intent = Intent(this, ProfilActivity::class.java)
-            startActivity(intent)
-        }
-
-
-        btnSearch.setOnClickListener {
-            val keyword = etKeyword.text.toString()
-
-            // Memulai activity baru dengan mengirimkan data pencarian
-            val intent = Intent(this, ListProdukActivity::class.java)
-            intent.putExtra("keyword", keyword)
-            startActivity(intent)
-        }
-        btnMakanan.setOnClickListener {
-
-            // Memulai activity baru dengan mengirimkan data pencarian
-            val intent = Intent(this, ListProdukActivity::class.java)
-            startActivity(intent)
-        }
-        btnMinuman.setOnClickListener {
-
-            // Memulai activity baru dengan mengirimkan data pencarian
-            val intent = Intent(this, ListMinuman::class.java)
-            startActivity(intent)
+            replaceFragment(fragment)
+            true
         }
     }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.container_fragment, fragment)
+        fragmentTransaction.commit()
+    }
 }
-
-

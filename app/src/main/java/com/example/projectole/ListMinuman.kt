@@ -4,11 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.View.OnClickListener
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.Toast
-import androidx.cardview.widget.CardView
+
 
 
 class ListMinuman : AppCompatActivity() {

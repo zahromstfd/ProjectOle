@@ -11,19 +11,18 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectole.*
-import com.example.projectole.adapter.HomeAdapter
+import com.example.projectole.adapter.MinumanAdapter
 import com.example.projectole.databinding.ActivityMainBinding
-import com.example.projectole.model.Keranjang
+import com.example.projectole.model.Minuman
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-
-class ProdukFragment : Fragment() {
-    lateinit var binding : ActivityMainBinding
-    lateinit var adapter : HomeAdapter
+class MinumanFragment : Fragment() {
+    lateinit var binding: ActivityMainBinding
+    lateinit var adapter: MinumanAdapter
     private lateinit var databaseRef: DatabaseReference
 
     override fun onCreateView(
@@ -31,66 +30,41 @@ class ProdukFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_produk, container, false)
+        return inflater.inflate(R.layout.fragment_minuman, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-       // var tampilproduk = view.findViewById<RecyclerView>(R.id.tampilproduk)
+        // var tampilproduk = view.findViewById<RecyclerView>(R.id.tampilproduk)
         val btnBeli1 = view.findViewById<Button>(R.id.btnBeli1)
         val backicon = view.findViewById<ImageButton>(R.id.backicon)
         val basketicon = view.findViewById<ImageButton>(R.id.basketIcon)
         val profileicon = view.findViewById<ImageButton>(R.id.profileIcon)
-        val tampilproduk = view.findViewById<RecyclerView>(R.id.rvUser)
+        val tampilminuman = view.findViewById<RecyclerView>(R.id.rvUser2)
 
-        val adapter = HomeAdapter(ArrayList())
+        val adapter = MinumanAdapter(ArrayList())
 //        tampilproduk.adapter = adapter
 //        tampilproduk.layoutManager = LinearLayoutManager(requireContext())
 
-        val layoutManager = GridLayoutManager(context,2, LinearLayoutManager.VERTICAL,false)
-        tampilproduk.layoutManager = layoutManager
-        tampilproduk.adapter = adapter
+        val layoutManager = GridLayoutManager(context, 2, LinearLayoutManager.VERTICAL, false)
+        tampilminuman.layoutManager = layoutManager
+        tampilminuman.adapter = adapter
 
-        databaseRef = FirebaseDatabase.getInstance().getReference("keranjang")
+        databaseRef = FirebaseDatabase.getInstance().getReference("minuman")
         databaseRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val keranjangList = ArrayList<Keranjang>()
+                val minumanList = ArrayList<Minuman>()
                 for (snapshot in dataSnapshot.children) {
-                    val keranjang = snapshot.getValue(Keranjang::class.java)
-                    keranjang?.let { keranjangList.add(it) }
+                    val minuman = snapshot.getValue(Minuman::class.java)
+                    minuman?.let { minumanList.add(it) }
                 }
-                adapter.setData(keranjangList)
+                adapter.setData(minumanList)
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
                 // Handle database error
             }
         })
-//
-//
-//        backicon.setOnClickListener {
-//            val intent = Intent(requireContext(), MainActivity::class.java)
-//            startActivity(intent)
-//        }
-//
-//        basketicon.setOnClickListener {
-//            val intent = Intent(requireContext(), KeranjangFragment::class.java)
-//            startActivity(intent)
-//        }
-//
-//        profileicon.setOnClickListener {
-//            val intent = Intent(requireContext(), ProfilActivity::class.java)
-//            startActivity(intent)
-//        }
-//
-//        btnBeli1.setOnClickListener {
-//            val intent = Intent(requireContext(), DetailProdukActivity::class.java)
-//            startActivity(intent)
-//        }
-//
-//
-//
-//
     }
 }

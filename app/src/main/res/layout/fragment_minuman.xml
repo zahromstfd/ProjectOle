@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ProdukFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvUser2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/list_product">
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </RelativeLayout>
+
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:id="@+id/container_fragment">-->
+    <!--        <RelativeLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content">-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/headerTextView"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_centerHorizontal="true"-->
+    <!--                android:text="Produk Kami"-->
+    <!--                android:textSize="24sp"-->
+    <!--                android:textColor="@color/black"-->
+    <!--                android:textStyle="bold"-->
+    <!--                />-->
+
+    <!--            <ImageButton-->
+    <!--                android:id="@+id/backicon"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_centerVertical="true"-->
+    <!--                android:src="@drawable/back" />-->
+
+    <!--            <ImageButton-->
+    <!--                android:id="@+id/basketIcon"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentEnd="true"-->
+    <!--                android:layout_centerVertical="true"-->
+    <!--                android:src="@drawable/cart" />-->
+
+    <!--            <ImageButton-->
+    <!--                android:id="@+id/profileIcon"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_toStartOf="@id/basketIcon"-->
+    <!--                android:layout_centerVertical="true"-->
+    <!--                android:src="@drawable/profilku" />-->
+
+    <!--        </RelativeLayout>-->
+    <!--        <GridLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:rowCount="1"-->
+    <!--            android:columnCount="2"-->
+    <!--            android:alignmentMode="alignMargins"-->
+    <!--            android:columnOrderPreserved="false">-->
+    <!--            <androidx.cardview.widget.CardView-->
+    <!--                android:id="@+id/btn1"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_columnWeight="1"-->
+    <!--                android:layout_rowWeight="1"-->
+    <!--                app:cardElevation="5dp"-->
+    <!--                app:cardCornerRadius="5dp"-->
+    <!--                app:cardUseCompatPadding="true">-->
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    android:gravity="center_horizontal"-->
+    <!--                    android:padding="10dp">-->
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/imageView4"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        app:srcCompat="@drawable/tempe" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/textView4"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Tempe Keripik"-->
+    <!--                        android:textStyle="bold"/>-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/harga4"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Rp 10.000"-->
+    <!--                        android:textColor="@color/btnpress"/>-->
+    <!--                    <Button-->
+    <!--                        android:id="@+id/btnBeli1"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="beli"-->
+    <!--                        style="@style/BtnLogin"-->
+    <!--                        />-->
+    <!--                </LinearLayout>-->
+    <!--            </androidx.cardview.widget.CardView>-->
+    <!--            <androidx.cardview.widget.CardView-->
+    <!--                android:id="@+id/btn2"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_columnWeight="1"-->
+    <!--                android:layout_rowWeight="1"-->
+    <!--                app:cardElevation="5dp"-->
+    <!--                app:cardCornerRadius="5dp"-->
+    <!--                app:cardUseCompatPadding="true">-->
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    android:gravity="center_horizontal"-->
+    <!--                    android:padding="10dp">-->
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/imageView5"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        app:srcCompat="@drawable/klanting" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/textView5"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Klanting"-->
+    <!--                        android:textStyle="bold"/>-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/harga5"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Rp 15.000"-->
+    <!--                        android:textColor="@color/btnpress"-->
+    <!--                        />-->
+    <!--                    <Button-->
+    <!--                        android:id="@+id/btnbeli2"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="beli"-->
+    <!--                        style="@style/BtnLogin"-->
+    <!--                        />-->
+    <!--                </LinearLayout>-->
+    <!--            </androidx.cardview.widget.CardView>-->
+    <!--            <androidx.cardview.widget.CardView-->
+    <!--                android:id="@+id/btn3"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_columnWeight="1"-->
+    <!--                android:layout_rowWeight="1"-->
+    <!--                app:cardElevation="5dp"-->
+    <!--                app:cardCornerRadius="5dp"-->
+    <!--                app:cardUseCompatPadding="true">-->
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    android:gravity="center_horizontal"-->
+    <!--                    android:padding="10dp">-->
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/imageView6"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        app:srcCompat="@drawable/nopia" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/textView6"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Nopia"-->
+    <!--                        android:textStyle="bold"/>-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/harga6"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Rp 18.000"-->
+    <!--                        android:textColor="@color/btnpress" />-->
+    <!--                    <Button-->
+    <!--                        android:id="@+id/btnbeli3"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="beli"-->
+    <!--                        style="@style/BtnLogin"-->
+    <!--                        />-->
+    <!--                </LinearLayout>-->
+    <!--            </androidx.cardview.widget.CardView>-->
+    <!--            <androidx.cardview.widget.CardView-->
+    <!--                android:id="@+id/btn4"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_columnWeight="1"-->
+    <!--                android:layout_rowWeight="1"-->
+    <!--                app:cardElevation="5dp"-->
+    <!--                app:cardCornerRadius="5dp"-->
+    <!--                app:cardUseCompatPadding="true">-->
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    android:gravity="center_horizontal"-->
+    <!--                    android:padding="10dp">-->
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/imageView7"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        app:srcCompat="@drawable/bagelan" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/textView7"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Bagelan"-->
+    <!--                        android:textStyle="bold"/>-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/harga7"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Rp 12.000"-->
+    <!--                        android:textColor="@color/btnpress" />-->
+    <!--                    <Button-->
+    <!--                        android:id="@+id/btnbeli4"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="beli"-->
+    <!--                        style="@style/BtnLogin"-->
+    <!--                        />-->
+    <!--                </LinearLayout>-->
+    <!--            </androidx.cardview.widget.CardView>-->
+    <!--            <androidx.cardview.widget.CardView-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_columnWeight="1"-->
+    <!--                android:layout_rowWeight="1"-->
+    <!--                app:cardElevation="5dp"-->
+    <!--                app:cardCornerRadius="5dp"-->
+    <!--                app:cardUseCompatPadding="true">-->
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    android:gravity="center_horizontal"-->
+    <!--                    android:padding="10dp">-->
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/imageView8"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        app:srcCompat="@drawable/getuk" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/textView8"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Getuk Goreng"-->
+    <!--                        android:textStyle="bold"/>-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/harga8"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Rp 18.000"-->
+    <!--                        android:textColor="@color/btnpress" />-->
+    <!--                    <Button-->
+    <!--                        android:id="@+id/btnbeli5"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="beli"-->
+    <!--                        style="@style/BtnLogin"-->
+    <!--                        />-->
+    <!--                </LinearLayout>-->
+    <!--            </androidx.cardview.widget.CardView>-->
+    <!--            <androidx.cardview.widget.CardView-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_columnWeight="1"-->
+    <!--                android:layout_rowWeight="1"-->
+    <!--                app:cardElevation="5dp"-->
+    <!--                app:cardCornerRadius="5dp"-->
+    <!--                app:cardUseCompatPadding="true">-->
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    android:gravity="center_horizontal"-->
+    <!--                    android:padding="10dp">-->
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/imageView9"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        app:srcCompat="@drawable/makaroni" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/textView9"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Makaroni"-->
+    <!--                        android:textStyle="bold"/>-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/harga9"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Rp 12.000"-->
+    <!--                        android:textColor="@color/btnpress" />-->
+    <!--                    <Button-->
+    <!--                        android:id="@+id/btnbeli6"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="beli"-->
+    <!--                        style="@style/BtnLogin"-->
+    <!--                        />-->
+    <!--                </LinearLayout>-->
+    <!--            </androidx.cardview.widget.CardView>-->
+    <!--        </GridLayout>-->
+    <!--    </LinearLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,8 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".fragments.HomeFragment">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,18 +31,18 @@
             android:src="@drawable/back" />
 
         <ImageButton
-            android:id="@+id/basketIcon"
+            android:id="@+id/logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/cart" />
+            android:src="@drawable/logout" />
 
         <ImageButton
             android:id="@+id/profileIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toStartOf="@id/basketIcon"
+            android:layout_toStartOf="@id/logout"
             android:layout_centerVertical="true"
             android:src="@drawable/profilku" />
     </RelativeLayout>

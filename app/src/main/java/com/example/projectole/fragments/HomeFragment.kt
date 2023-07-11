@@ -9,12 +9,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
-import com.example.projectole.KeranjangActivity
-import com.example.projectole.ListMinuman
-import com.example.projectole.ListProdukActivity
+import androidx.navigation.fragment.findNavController
+import com.example.projectole.LoginActivity
 import com.example.projectole.MasukActivity
-import com.example.projectole.ProfilActivity
 import com.example.projectole.R
+import com.google.firebase.auth.FirebaseAuth
 
 class HomeFragment : Fragment() {
 
@@ -23,20 +22,28 @@ class HomeFragment : Fragment() {
     private lateinit var btnMinuman: Button
     private lateinit var etKeyword: EditText
 
+    private lateinit var firebaseAuth: FirebaseAuth
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+        return view
 
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         btnSearch = view.findViewById(R.id.btnSearch)
         etKeyword = view.findViewById(R.id.etKeyword)
         btnMakanan = view.findViewById(R.id.btnMakanan)
         btnMinuman = view.findViewById(R.id.btnMinuman)
 
         val backicon = view.findViewById<ImageButton>(R.id.backicon)
-        val basketicon = view.findViewById<ImageButton>(R.id.basketIcon)
+        val logout = view.findViewById<ImageButton>(R.id.logout)
         val profileicon = view.findViewById<ImageButton>(R.id.profileIcon)
 
         backicon.setOnClickListener {
@@ -44,13 +51,14 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
-        basketicon.setOnClickListener {
-            val intent = Intent(requireContext(), KeranjangFragment::class.java)
-            startActivity(intent)
+        logout.setOnClickListener {
+            firebaseAuth.signOut()
+            startActivity(Intent(requireContext(), LoginActivity::class.java))
+            requireActivity().finish()
         }
 
         profileicon.setOnClickListener {
-            val intent = Intent(requireContext(), ProfilActivity::class.java)
+            val intent = Intent(requireContext(), ProfilFragment::class.java)
             startActivity(intent)
         }
 
@@ -58,24 +66,19 @@ class HomeFragment : Fragment() {
             val keyword = etKeyword.text.toString()
 
             // Memulai activity baru dengan mengirimkan data pencarian
-            val intent = Intent(requireContext(), ListProdukActivity::class.java)
+            val intent = Intent(requireContext(), ProdukFragment::class.java)
             intent.putExtra("keyword", keyword)
             startActivity(intent)
         }
 
         btnMakanan.setOnClickListener {
             // Memulai activity baru tanpa data pencarian
-            val intent = Intent(requireContext(), ListProdukActivity::class.java)
-            startActivity(intent)
+            findNavController().navigate(R.id.action_homeFragment_to_produkFragment)
         }
 
         btnMinuman.setOnClickListener {
             // Memulai activity baru tanpa data pencarian
-            val intent = Intent(requireContext(), ListMinuman::class.java)
-            startActivity(intent)
+            findNavController().navigate(R.id.action_homeFragment_to_minumanFragment)
         }
-
-        return view
-
     }
 }

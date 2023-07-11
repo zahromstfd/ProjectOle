@@ -3,23 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
-
+    app:startDestination="@id/homeFragment">
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.projectole.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
-
+        android:id="@+id/homeFragment"
+        android:name="com.example.projectole.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_produkFragment"
+            app:destination="@id/produkFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profilFragment"
+            app:destination="@id/profilFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_keranjangFragment3"
+            app:destination="@id/keranjangFragment3" />
+        <action
+            android:id="@+id/action_homeFragment_to_minumanFragment"
+            app:destination="@id/minumanFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.projectole.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
+        android:id="@+id/produkFragment"
+        android:name="com.example.projectole.fragments.ProdukFragment"
+        android:label="fragment_produk"
+        tools:layout="@layout/fragment_produk" />
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.projectole.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/profilFragment"
+        android:name="com.example.projectole.fragments.ProfilFragment"
+        android:label="activity_profil"
+        tools:layout="@layout/activity_profil" />
+    <fragment
+        android:id="@+id/keranjangFragment3"
+        android:name="com.example.projectole.fragments.KeranjangFragment"
+        android:label="fragment_keranjang"
+        tools:layout="@layout/fragment_keranjang" />
+    <fragment
+        android:id="@+id/minumanFragment"
+        android:name="com.example.projectole.fragments.MinumanFragment"
+        android:label="MinumanFragment" />
+    <fragment
+        android:id="@+id/notifikasiFragment"
+        android:name="com.example.projectole.fragments.NotifikasiFragment"
+        android:label="NotifikasiFragment" />
 </navigation>

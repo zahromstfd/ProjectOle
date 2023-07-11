@@ -12,40 +12,49 @@
         android:theme="@style/Theme.ProjectOle"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".IntroMain"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".fragments.HomeFragment"
             android:exported="false" />
         <activity
-            android:name=".DetailMinumanActivity"
+            android:name=".fragments.KeranjangFragment"
             android:exported="false" />
         <activity
-            android:name=".KeranjangMinumanActivity"
+            android:name=".fragments.ProfilFragment"
+            android:exported="false"/>
+        <activity
+            android:name=".fragments.ProdukFragment"
+            android:exported="false"/>
+        <activity
+            android:name=".fragments.NotifikasiFragment"
             android:exported="false" />
         <activity
-            android:name=".KeranjangActivity"
+            android:name=".fragments.DetailMinumanFragment"
             android:exported="false" />
         <activity
-            android:name=".ListMinuman"
+            android:name=".fragments.DetailMakananFragment"
             android:exported="false" />
+        <activity
+            android:name=".fragments.KeranjangMinumanFragment"
+            android:exported="false" />
+        <activity
+            android:name=".fragments.MinumanFragment"
+            android:exported="false" />
+        <activity
+            android:name=".PesanSkrgActivity"
+            android:exported="false"/>
         <activity
             android:name=".PembayaranActivity"
             android:exported="false" />
         <activity
-            android:name=".NotifikasiActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ListProdukActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DetailProdukActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfilActivity"
-            android:exported="false" />
-        <activity
             android:name=".DaftarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MasukActivity"
@@ -54,13 +63,9 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".IntroMain"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".MainActivity"
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
